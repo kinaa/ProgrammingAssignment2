@@ -27,11 +27,11 @@ cacheSolve <- function(x, ...) {
         m <- x$getinverse()
         # checking if the inverse has already been calculated
         if(!is.null(m)) {
-            # get it from the cache and returns it, no computation needed
+            # gets it from the cache and returns it, no computation needed
             message("getting cached data")
             return(m)
         }
-        # it's ot cached, then invers needs to be calculated
+        # it's not cached, then invers needs to be calculated
         data  <- x$get()
         m <- solve(data, ...)
         x$setinverse(m)
